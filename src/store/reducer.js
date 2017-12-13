@@ -37,7 +37,8 @@ const reducer = (state = initialState, action) => {
 
     case 'DELETE_RESULT':
       return {
-        ...state
+        ...state,
+        results: state.results.filter(result => action.id !== result.id)
       };
 
     default:
