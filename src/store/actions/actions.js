@@ -5,14 +5,48 @@ export const SUBTRACT = 'SUBTRACT';
 export const STORE_RESULT = 'STORE_RESULT';
 export const DELETE_RESULT = 'DELETE_RESULT';
 
-export const increment = () => ({ type: INCREMENT });
+export const increment = () => {
+  return {
+    type: INCREMENT
+  };
+};
 
-export const decrement = () => ({ type: DECREMENT });
+export const decrement = () => {
+  return {
+    type: DECREMENT
+  };
+};
 
-export const add = value => ({ type: ADD, value });
+export const add = value => {
+  return {
+    type: ADD,
+    value
+  };
+};
 
-export const subtract = value => ({ type: SUBTRACT, value });
+export const subtract = value => {
+  return {
+    type: SUBTRACT,
+    value
+  };
+};
 
-export const storeResult = result => ({ type: STORE_RESULT, result });
+export const saveResult = result => {
+  return {
+    type: STORE_RESULT,
+    result
+  };
+};
 
-export const deleteResult = id => ({ type: DELETE_RESULT, id });
+export const storeResult = result => dispatch => {
+  setTimeout(() => {
+    return dispatch(saveResult(result));
+  }, 2000);
+};
+
+export const deleteResult = id => {
+  return {
+    type: DELETE_RESULT,
+    id
+  };
+};
